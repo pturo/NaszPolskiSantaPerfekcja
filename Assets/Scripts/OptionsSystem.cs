@@ -7,7 +7,7 @@ public class OptionsSystem : MonoBehaviour
 {
     public void reloadLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
     public void loadMainMenu()

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
     public int timeLeft = 60;
     public Text countdownText;
+    public GameObject loseGamePanel;
     // Use this for initialization
     void Start()
     {
@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
         {
             StopCoroutine("LoseTime");
             countdownText.text = "Skończył się czas!";
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+            loseGamePanel.SetActive(true);
         }
     }
 

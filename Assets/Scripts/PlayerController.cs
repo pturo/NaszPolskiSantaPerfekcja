@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         moveDirection = new Vector3(joystick.Horizontal(), 0.0f, joystick.Vertical());
         moveDirection = transform.TransformDirection(moveDirection);
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         Turn();
     }
 
-    private void Jump()
+    public void Jump()
     {
         if (characterController.isGrounded)
         {
@@ -61,7 +61,8 @@ public class PlayerController : MonoBehaviour
             }
             else if (touch.phase == TouchPhase.Moved)
             {
-                float dY = touch.position.y * rotationSpeed * Mathf.Deg2Rad;
+                Quaternion dY = Quaternion.Euler(0f, -touch.deltaPosition.x * rotationSpeed, 0f);
+                transform.rotation = dY * transform.rotation;
             }
             else if (touch.phase == TouchPhase.Ended)
             {
