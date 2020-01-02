@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
         // Turn the camera
         Turn();
+        ShootPresent();
     }
 
     public void Jump()
@@ -67,6 +68,18 @@ public class PlayerController : MonoBehaviour
             else if (touch.phase == TouchPhase.Ended)
             {
                 Debug.Log("Touch ended.");
+            }
+        }
+    }
+
+    public void ShootPresent()
+    {
+        GameObject present = ObjectPooler.SharedInstance.GetPooledObject();
+        if (Input.GetButton("Mouse X"))
+        {
+            if (present != null)
+            {
+                present.SetActive(true);
             }
         }
     }

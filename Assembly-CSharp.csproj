@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\JumpAction.cs" />
     <Compile Include="Assets\Scripts\LevelLoader.cs" />
+    <Compile Include="Assets\Scripts\ObjectPooler.cs" />
     <Compile Include="Assets\Scripts\OptionsSystem.cs" />
     <Compile Include="Assets\Scripts\PauseSystem.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />

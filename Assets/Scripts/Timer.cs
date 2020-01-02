@@ -8,10 +8,14 @@ public class Timer : MonoBehaviour
     public int timeLeft = 60;
     public Text countdownText;
     public GameObject loseGamePanel;
+    public GameObject light;
     // Use this for initialization
     void Start()
     {
+        light = GameObject.FindGameObjectWithTag("Light");
+        light.SetActive(false);
         StartCoroutine("LoseTime");
+        StartCoroutine("LightFlicker");
     }
 
     // Update is called once per frame
@@ -21,6 +25,7 @@ public class Timer : MonoBehaviour
         if (timeLeft <= 0)
         {
             StopCoroutine("LoseTime");
+            StopCoroutine("LightFlicker");
             countdownText.text = "Skończył się czas!";
             loseGamePanel.SetActive(true);
         }
@@ -32,6 +37,17 @@ public class Timer : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             timeLeft--;
+        }
+    }
+
+    IEnumerator LightFlicker()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(10);
+            light.SetActive(true);
+            yield return new WaitForSeconds(10);
+            light.SetActive(false);
         }
     }
 }
