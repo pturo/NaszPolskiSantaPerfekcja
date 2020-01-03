@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 6.0f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
-    public float rotationSpeed = 5;
+    public float rotationSpeed = 0.1f;
     private Vector3 moveDirection = Vector3.zero;
 
     // rotation that occurs in angles per second holding down input
@@ -22,25 +23,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        moveDirection = new Vector3(joystick.Horizontal(), 0.0f, joystick.Vertical());
-        moveDirection = transform.TransformDirection(moveDirection);
-        moveDirection *= speed;
-
-        Jump();
-
-        // Move the controller
-        characterController.Move(moveDirection * Time.deltaTime);
-
-        // Turn the camera
-        Turn();
-        ShootPresent();
-    }
-
-    public void Jump()
-    {
         if (characterController.isGrounded)
         {
-            if (Input.GetButton("Jump"))
+            // We are grounded, so recalculate
+            // move direction directly from axes
+
+            moveDirection = new Vector3(joystick.Horizontal(), 0.0f, joystick.Vertical());
+            moveDirection *= speed;
+
+            if (CrossPlatformInputManager.GetButtonDown("Jump"))
             {
                 moveDirection.y = jumpSpeed;
             }
@@ -50,6 +41,12 @@ public class PlayerController : MonoBehaviour
         // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
         // as an acceleration (ms^-2)
         moveDirection.y -= gravity * Time.deltaTime;
+
+        // Move the controller
+        characterController.Move(moveDirection * Time.deltaTime);
+
+        // Turn the camera
+        Turn();
     }
 
     private void Turn()
@@ -68,18 +65,6 @@ public class PlayerController : MonoBehaviour
             else if (touch.phase == TouchPhase.Ended)
             {
                 Debug.Log("Touch ended.");
-            }
-        }
-    }
-
-    public void ShootPresent()
-    {
-        GameObject present = ObjectPooler.SharedInstance.GetPooledObject();
-        if (Input.GetButton("Mouse X"))
-        {
-            if (present != null)
-            {
-                present.SetActive(true);
             }
         }
     }
