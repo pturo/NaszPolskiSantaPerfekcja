@@ -59,37 +59,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9206}
     - Class: 114
-      Script: {instanceID: 9326}
+      Script: {instanceID: 9330}
     - Class: 114
-      Script: {instanceID: 9328}
+      Script: {instanceID: 9332}
     - Class: 114
-      Script: {instanceID: 9334}
-    - Class: 114
-      Script: {instanceID: 9336}
+      Script: {instanceID: 9338}
     - Class: 114
       Script: {instanceID: 9340}
     - Class: 114
-      Script: {instanceID: 9348}
+      Script: {instanceID: 9344}
     - Class: 114
-      Script: {instanceID: 9384}
+      Script: {instanceID: 9352}
     - Class: 114
-      Script: {instanceID: 9386}
+      Script: {instanceID: 9388}
     - Class: 114
-      Script: {instanceID: 9666}
+      Script: {instanceID: 9390}
     - Class: 114
-      Script: {instanceID: 9814}
+      Script: {instanceID: 9594}
     - Class: 114
-      Script: {instanceID: 9818}
+      Script: {instanceID: 9672}
     - Class: 114
-      Script: {instanceID: 10454}
+      Script: {instanceID: 9822}
     - Class: 114
-      Script: {instanceID: 10566}
+      Script: {instanceID: 9830}
     - Class: 114
-      Script: {instanceID: 13288}
+      Script: {instanceID: 9856}
     - Class: 114
-      Script: {instanceID: 20028}
+      Script: {instanceID: 10474}
     - Class: 114
-      Script: {instanceID: 36042}
+      Script: {instanceID: 10582}
+    - Class: 114
+      Script: {instanceID: 10592}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -126,25 +126,25 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9326}
+      Script: {instanceID: 9330}
     - Class: 114
-      Script: {instanceID: 9328}
+      Script: {instanceID: 9332}
     - Class: 114
-      Script: {instanceID: 9334}
+      Script: {instanceID: 9338}
     - Class: 114
-      Script: {instanceID: 9340}
+      Script: {instanceID: 9344}
     - Class: 114
-      Script: {instanceID: 9348}
-    - Class: 114
-      Script: {instanceID: 9382}
-    - Class: 114
-      Script: {instanceID: 9384}
+      Script: {instanceID: 9352}
     - Class: 114
       Script: {instanceID: 9386}
     - Class: 114
-      Script: {instanceID: 10474}
+      Script: {instanceID: 9388}
     - Class: 114
-      Script: {instanceID: 10566}
+      Script: {instanceID: 9390}
+    - Class: 114
+      Script: {instanceID: 10494}
+    - Class: 114
+      Script: {instanceID: 10592}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -402,6 +402,12 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
+      Hash: 352455aaadb8c98ff36ead557753abfa
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: UnityStandardAssets.CrossPlatformInput
+    className: TiltInput
+  - hash:
+      serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -600,6 +606,12 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
+      Hash: af73be111134daa5f58eec4b8998237a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PresentSpotChecker
+  - hash:
+      serializedVersion: 2
       Hash: f08a111e17bb701f9c9ec57bb78d9920
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -654,10 +666,28 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: a8b6c919b2049fcc280823488144371f
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: UnityStandardAssets.CrossPlatformInput
+    className: Joystick
+  - hash:
+      serializedVersion: 2
       Hash: c8c5e65e9fb858572516474d6e2102bc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PauseSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 4bd1cc3c85989d2213a9a8fd9d09e63f
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: UnityStandardAssets.CrossPlatformInput
+    className: InputAxisScrollbar
+  - hash:
+      serializedVersion: 2
+      Hash: fdd7177da17032ba94d98037cc97bb49
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: UnityStandardAssets.CrossPlatformInput
+    className: AxisTouchButton
   - hash:
       serializedVersion: 2
       Hash: 1c56835cbc65a82641c73e559bf06bbc
@@ -670,6 +700,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Asset
+  - hash:
+      serializedVersion: 2
+      Hash: c88c4199b288356ec3eb2f0d85abc619
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: UnityStandardAssets.CrossPlatformInput
+    className: ButtonHandler
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -688,6 +724,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: UnityStandardAssets.CrossPlatformInput
+    className: MobileControlRig
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
@@ -780,6 +822,12 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
+      Hash: 219ec6059796d8951d2adcd8505d0dc2
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: UnityStandardAssets.CrossPlatformInput
+    className: TouchPad
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -822,6 +870,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
+      Hash: f6dc72484a3d6a7c5d647a83f9e104b1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PresentShooter
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -844,60 +898,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: f6dc72484a3d6a7c5d647a83f9e104b1
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PresentShooter
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PresentSpotChecker
-  - hash:
-      serializedVersion: 2
-      Hash: 352455aaadb8c98ff36ead557753abfa
-    assemblyName: Assembly-CSharp-firstpass.dll
-    namespaceName: UnityStandardAssets.CrossPlatformInput
-    className: TiltInput
-  - hash:
-      serializedVersion: 2
-      Hash: a8b6c919b2049fcc280823488144371f
-    assemblyName: Assembly-CSharp-firstpass.dll
-    namespaceName: UnityStandardAssets.CrossPlatformInput
-    className: Joystick
-  - hash:
-      serializedVersion: 2
-      Hash: 4bd1cc3c85989d2213a9a8fd9d09e63f
-    assemblyName: Assembly-CSharp-firstpass.dll
-    namespaceName: UnityStandardAssets.CrossPlatformInput
-    className: InputAxisScrollbar
-  - hash:
-      serializedVersion: 2
-      Hash: fdd7177da17032ba94d98037cc97bb49
-    assemblyName: Assembly-CSharp-firstpass.dll
-    namespaceName: UnityStandardAssets.CrossPlatformInput
-    className: AxisTouchButton
-  - hash:
-      serializedVersion: 2
-      Hash: c88c4199b288356ec3eb2f0d85abc619
-    assemblyName: Assembly-CSharp-firstpass.dll
-    namespaceName: UnityStandardAssets.CrossPlatformInput
-    className: ButtonHandler
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp-firstpass.dll
-    namespaceName: UnityStandardAssets.CrossPlatformInput
-    className: MobileControlRig
-  - hash:
-      serializedVersion: 2
-      Hash: 219ec6059796d8951d2adcd8505d0dc2
-    assemblyName: Assembly-CSharp-firstpass.dll
-    namespaceName: UnityStandardAssets.CrossPlatformInput
-    className: TouchPad
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
