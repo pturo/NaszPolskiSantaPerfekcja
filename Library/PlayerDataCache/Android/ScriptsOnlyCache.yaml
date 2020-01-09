@@ -79,20 +79,22 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9672}
     - Class: 114
-      Script: {instanceID: 9822}
+      Script: {instanceID: 9824}
     - Class: 114
-      Script: {instanceID: 9830}
+      Script: {instanceID: 9832}
     - Class: 114
-      Script: {instanceID: 9856}
+      Script: {instanceID: 9858}
     - Class: 114
-      Script: {instanceID: 10474}
+      Script: {instanceID: 10478}
     - Class: 114
-      Script: {instanceID: 10582}
+      Script: {instanceID: 10590}
     - Class: 114
-      Script: {instanceID: 10592}
+      Script: {instanceID: 10600}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 143
       Script: {instanceID: 0}
@@ -142,9 +144,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9390}
     - Class: 114
-      Script: {instanceID: 10494}
+      Script: {instanceID: 10498}
     - Class: 114
-      Script: {instanceID: 10592}
+      Script: {instanceID: 10600}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -690,7 +692,7 @@ ScriptsOnlyBuild:
     className: AxisTouchButton
   - hash:
       serializedVersion: 2
-      Hash: 1c56835cbc65a82641c73e559bf06bbc
+      Hash: e4443057e3a3c4b4322211549154413f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: VirtualJoystick
@@ -870,7 +872,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
-      Hash: f6dc72484a3d6a7c5d647a83f9e104b1
+      Hash: 2966639bc879a3a22dad5276fa188e2a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PresentShooter
@@ -886,12 +888,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalEmitter
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: JumpAction
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb

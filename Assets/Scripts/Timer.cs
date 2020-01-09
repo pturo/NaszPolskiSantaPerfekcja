@@ -28,6 +28,11 @@ public class Timer : MonoBehaviour
             StopCoroutine("LightFlicker");
             countdownText.text = "Skończył się czas!";
             loseGamePanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
         }
     }
 

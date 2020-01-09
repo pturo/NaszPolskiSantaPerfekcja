@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
-
 public class PlayerController : MonoBehaviour
 {
     public VirtualJoystick joystick;

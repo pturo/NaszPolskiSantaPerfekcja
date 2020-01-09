@@ -4,61 +4,65 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
+public class VirtualJoystick : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
-    private Image bgImg;
-    private Image joystickImg;
-    public Vector3 inputVector;
+    protected RectTransform Background;
+    protected bool Pressed;
+    protected int PointerId;
+    public RectTransform Handle;
+    [Range(0f, 2f)]
+    public float HandleRange = 1f;
 
-    private void Start()
+    [HideInInspector]
+    public Vector2 InputVector = Vector2.zero;
+    public Vector2 AxisNormalized { get { return InputVector.magnitude > 0.25f ? InputVector.normalized : (InputVector.magnitude < 0.01f ? Vector2.zero : InputVector * 4f); } }
+
+    void Start()
     {
-        bgImg = GetComponent<Image>();
-        joystickImg = transform.GetChild(0).GetComponent<Image>();
+        if (Handle == null)
+            Handle = transform.GetChild(0).GetComponent<RectTransform>();
+        Background = GetComponent<RectTransform>();
+        Background.pivot = new Vector2(0.5f, 0.5f);
+        Pressed = false;
     }
 
-    public void OnDrag(PointerEventData eventData)
+    void Update()
     {
-        Vector2 pos;
-        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(bgImg.rectTransform,
-            eventData.position,
-            eventData.pressEventCamera,
-            out pos)) {
-            pos.x = (pos.x / bgImg.rectTransform.sizeDelta.x);
-            pos.y = (pos.y / bgImg.rectTransform.sizeDelta.y);
-
-            inputVector = new Vector3(pos.x*2 + 1,0,pos.y*2 - 1);
-            inputVector = (inputVector.magnitude > 1.0f)?inputVector.normalized:inputVector;
-
-            // Move joystick IMG
-            joystickImg.rectTransform.anchoredPosition = new Vector3(inputVector.x * (bgImg.rectTransform.sizeDelta.x/3),
-                inputVector.z * (bgImg.rectTransform.sizeDelta.y/3));
+        if (Pressed)
+        {
+            Vector2 direction = (PointerId >= 0 && PointerId < Input.touches.Length) ? Input.touches[PointerId].position - new Vector2(Background.position.x, Background.position.y) : new Vector2(Input.mousePosition.x, Input.mousePosition.y) - new Vector2(Background.position.x, Background.position.y);
+            InputVector = (direction.magnitude > Background.sizeDelta.x / 2f) ? direction.normalized : direction / (Background.sizeDelta.x / 2f);
+            Handle.anchoredPosition = (InputVector * Background.sizeDelta.x / 2f) * HandleRange;
         }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        OnDrag(eventData);
+        Pressed = true;
+        PointerId = eventData.pointerId;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        inputVector = Vector3.zero;
-        joystickImg.rectTransform.anchoredPosition = Vector3.zero;
+        Pressed = false;
+        InputVector = Vector2.zero;
+        Handle.anchoredPosition = Vector2.zero;
     }
 
     public float Horizontal()
     {
-        if (inputVector.x != 0)
-            return inputVector.x;
+        if (InputVector.x != 0)
+            return InputVector.x;
         else
             return Input.GetAxis("Horizontal");
     }
 
     public float Vertical()
     {
-        if (inputVector.z != 0)
-            return inputVector.z;
+        if (InputVector.y != 0)
+            return InputVector.y;
         else
             return Input.GetAxis("Vertical");
     }
 }
+
